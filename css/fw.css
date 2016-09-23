@@ -1,0 +1,401 @@
+
+	
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: "微軟正黑體","Microsoft JhengHei","Arial Unicode MS","Helvetica Neue",Helvetica,sans-serif;
+	border:0;
+
+}
+html{
+
+}
+input[type="submit"]{
+	cursor: pointer;
+}
+input,button,select,textarea{outline:none;}
+
+
+
+@media  screen and (min-width: 200px) {
+/*  */
+/*  */
+/* header */
+/*  */
+/*  */
+#Header{
+	width: 100%;
+	height: 100px;
+}
+#header.top{
+	width: 98%;
+	height: 60px;
+	position: fixed;
+	z-index: 1000;
+	left:0; right:0; top:0; bottom:0;
+}
+#header{
+	width: 98%;
+	height: 100%;
+	margin: 0 auto;
+	min-width: 1000px;
+	background-color: white;
+}
+#fw_logo{
+	width: 150px;
+	height: 60px;
+	position: absolute;
+	margin: 20px 0 0 5px;
+	text-decoration: none;
+	color: #333;
+}
+#fw_logo *{
+	vertical-align: middle;
+	font-size: 28px;
+}
+#fw_logo img{
+	width: 60px;
+	height: 60px;
+}
+
+
+#fw_navig{
+	width: 200px;
+	height: 50px;
+	display: table;
+	position: relative;
+	margin: 10px 0 0 0;
+	float: right;
+	color: #81BC37;
+}
+#fw_header{
+	height: 100px;
+
+}
+#fw_header a{
+	text-decoration: none;
+	color: #333;
+}
+#fw_header ul{
+	margin: 0 0 0 150px;
+	width: 65%;
+	list-style: none;
+
+}
+#fw_header ul li{
+	float: left;
+	padding: 55px 5.2% 0 5.2%;
+
+}
+#fw_header ul a:hover{
+	color:#81BC37;
+}
+
+
+
+
+#fw_search{
+	width: 200px;
+	height: 35px;
+	position: relative;
+	float: right;
+	margin: -50px 0px 0px 0px;
+	border-bottom: 2px solid #CBCBCB;
+}
+
+#fw_search .submit{
+	width:25px;
+	height: 35px;
+	background-image: url(../source/magnify.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	border: none;
+	background-color: transparent;
+	vertical-align: middle;
+}
+#fw_search .text{
+	width: 165px;
+	height: 35px;
+	vertical-align: middle;
+}
+#header.top #fw_logo{
+	width: 150px;
+	height: 60px;
+	position: absolute;
+	margin: 0 0 0 5px;
+	text-decoration: none;
+	color: #333;
+}
+#header.top #fw_search{
+	display: none;
+}
+#header.top #fw_navig{
+	margin: 24px 0 0 0;
+}
+#header.top #fw_header ul li{
+	float: left;
+	padding: 24px 5.2% 0 5.2%;
+
+}
+/*
+.menu-item{
+
+}
+.menu-item a{
+} */
+/*  */
+/*  */
+#fw_main{
+	position: relative;
+	width: 98%;
+	height: 500px;
+	margin: 20px auto;
+	min-width: 1000px;
+}
+#fw_carousel{
+	width: 100%;
+	overflow: hidden;
+}
+#carousel{
+	width:900%;
+	height: 100%;
+	position: relative;
+	left: -100%;
+}
+#fw_carousel li{
+	width: 11.1111%;
+	float: left;
+}
+
+
+#fw_main #carousel .pic-item img{
+	height: 500px;
+	width: 100%;
+}
+
+
+.pic-item.active{
+	display: block;
+}
+.pager-item{
+	color: #919EAB;
+}
+.pager-item.active{
+	background-color: #81BC37;
+	color: black;
+}
+
+.picBtn{
+	width: 50px;
+	height: 50px;
+	top: 50%;
+	margin-top: -25px;
+	opacity: 1;
+	position: absolute;
+	z-index: 999;
+}
+#picPrivious{
+	float: left;
+}
+#picNext{
+	left: 100%;
+	margin-left:-50px;
+}
+
+
+#carousel{
+	width:900%;
+	height: 504px;
+	position: relative;
+	left: -100%;
+}
+#fw_main #carousel .pic-item{
+	list-style: none;
+}
+
+
+#fw_main #carouselPager{
+	width: 287px;
+	position: absolute;
+	left: 50%;
+	margin-left: -143px;
+	top:470px; 
+
+	
+}
+
+
+#fw_main #carouselPager .pager-item{
+	list-style: none;
+	float: left;
+	border: 1px solid #919EAB;
+	border-radius:8px;
+	padding:0 5px;
+	margin: 0 10px;
+}
+/*  */
+/*  */
+/* box */
+/*  */
+/*  */
+#fw_content{
+	width: 98%;
+	min-width: 1000px;
+	margin: 0 auto;
+}
+#fw_content a:hover{
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;
+}
+#fw_content .daughter{
+	width: 100%;height: 0;
+	padding-top: 19.2%;
+}
+.boxs{
+	opacity: inherit;
+	float: left;
+	background-position: center center;
+	background-size: 100% 100%;
+}
+#box1{
+	width: 32%;
+	padding-right: 2%;
+	background-image: url(../source/box1.jpg);
+}
+#box2{
+	width: 32%;
+	background-image: url(../source/box2.jpg);
+}
+#box3{
+	width: 32%;
+	padding-left: 2%;
+	background-image: url(../source/box3.jpg);
+}
+.boxsSon{
+	width: 100%;height: 0;
+	padding-top: 60%;
+}
+/*  */
+/*  */
+/* mv */
+/*  */
+/*  */
+#fw_mvContent{
+	width: 98%;
+	min-width: 1000px;
+	background-color: #DADADA;
+	margin:10px auto;
+	padding: 50px 0;
+	text-align: center;
+}
+#fw_mvContent h2{
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 34px;
+	line-height: 36px;
+	color: #333;
+	font-weight: 700;
+}
+
+#fw_mvContent #mvContent{
+	width: 1008px;
+	height: 382px;
+	margin: 0 auto;
+}
+#fw_mvContent #mvContent .divMv{
+	position: relative;
+	display: inline-block;
+	width: 330px;
+	height: 185px;
+	border: 3px;
+	cursor: pointer;
+	background-color: #000;
+
+	
+}
+
+#fw_mvContent #mvContent .divMv::before{
+	content: "";
+	background-image: url(../source/before.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 40px;
+	height: 40px;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0.5;
+	z-index: 100;
+}
+#fw_mvContent #mvContent .divMv img{
+	width: 100%;
+	height: 100%;
+	opacity: 0.8;
+	z-index: 50;
+}
+#fw_mvContent #mvContent .divMv:hover img{
+	opacity: 1;
+}
+#fw_mvContent #buyContent{
+	margin-top: 40px;
+}
+#fw_mvContent #buyContent a:first-child{
+	display: inline-block;
+	text-decoration: none;
+	color: #333;
+	outline: none;
+	margin: 0 5px;
+	border: 2px solid #333;
+	padding: 13px 30px;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: 700;
+	transition: 0.2s;
+}
+#fw_mvContent #buyContent a:last-child{
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	background-color: #00B5E0;
+	outline: none;
+	margin: 0 5px;
+	border: 2px solid #00B5E0;
+	padding: 13px 30px;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: 700;
+	transition: 0.2s;
+}
+#fw_mvContent #buyContent a:first-child:hover{
+	color: white;
+	background-color: black;
+}
+#fw_mvContent #buyContent a:last-child:hover{
+	background-color: #009ec3;
+	border-color: #009ec3;;
+}
+}
+#fw_mvContent #mask{
+	position: fixed;
+	top: 0;right: 0;bottom: 0;left: 0;
+	pointer-events: none;
+	opacity: 0;
+	z-index: 9999999999;
+	background-color: #666666;
+	transition: 0.5;
+}
+#fw_mvContent #mvPlayer{
+	position: fixed;
+	top: 50%;left: 50%;
+	width: 900px;height: 500px;
+	transform: translate(-50%,-50%);
+	pointer-events: none;
+	opacity: 0;
+	z-index: 99999999991;
+	background-color: #000000;
+	transition: 0.5;
+}
