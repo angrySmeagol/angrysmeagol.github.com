@@ -6,8 +6,7 @@ require.config({
 		backbone:'../commen/backbone',
 		header:'header',
 		container:'container',
-		mv:"mv",
-		zscript:"../commen/zscript/"
+		mv:"mv"
 	}
 });
 require(['header','container','mv','backbone',"jquery","underscore"],function(Header,Container,Mv,Backbone,$,_){
