@@ -106,7 +106,7 @@ input,button,select,textarea{outline:none;}
 #fw_search .submit{
 	width:25px;
 	height: 35px;
-	background-image: url(https://thumbnail0.baidupcs.com/thumbnail/d7bba474cb9f2c7154819e76b3d79241?fid=2634596005-250528-428495847947863&time=1474606800&rt=pr&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-4h8%2bPK9FCmwKq1U1lPRGwecdpWU%3d&expires=8h&chkbd=0&chkv=0&dp-logid=6182654927759907047&dp-callid=0&size=c10000_u10000&quality=90);
+	background-image: url(http://www.htc.com/assets/layout/img/ltr/magnify.png);
 	background-repeat: no-repeat;
 	background-position: left center;
 	border: none;
@@ -318,7 +318,7 @@ input,button,select,textarea{outline:none;}
 
 #fw_mvContent #mvContent .divMv::before{
 	content: "";
-	background-image: url(https://thumbnail0.baidupcs.com/thumbnail/06edafcb78410c76ec4b2b54981e9606?fid=2634596005-250528-122791236849285&time=1474610400&rt=pr&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-SK5%2fkXi3FlXZnJ20MQHx4VWVrCE%3d&expires=8h&chkbd=0&chkv=0&dp-logid=6183078924058227494&dp-callid=0&size=c10000_u10000&quality=90);
+	background-image: url(http://www.htc.com/assets/layout/img/homepage/play-button-video-white.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 40px;
