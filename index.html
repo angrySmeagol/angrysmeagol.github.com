@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FlyWin</title>
+	<meta charset="utf-8" />
+	<link rel="icon" href="./source/title.png"/>
+	<link rel="stylesheet" type="text/css" href="./css/fw.css" />
+	
+	<script type="text/template" id="header_tmpl">
+		<ul>
+			<% for(var i=0;i<value.length;i++){ %>
+			<li class="menu-item" id="item<%= value[i].attributes.position %>">
+				<% if(value[i].attributes.title!="") %>
+				<a href="#info/<%= value[i].attributes.position %>" class="menu"><%= value[i].attributes.title %></a>
+			</li>
+			<% }%>
+		</ul>	
+	</script>
+	<script type="text/template" id="main_tmpl_carousel1">
+		<img src="./source/left.png" class="picBtn" id="picPrivious">
+		<img src="./source/right.png" class="picBtn" id="picNext">
+		<div id="fw_carousel">
+			<ul id="carousel">
+				<% for(var i=0;i<value.length;i++) {%>
+				<li class="pic-item" id="pic<%= value[i].attributes.picId %>">
+					<% if(value[i].attributes.picName!="") %>
+					<a href="#" class="pic">
+						<img src="<%= value[i].attributes.picUrl%>" alt="<%= value[i].attributes.picName%>" />
+					</a>
+				</li>
+				<%}%>
+			</ul>	
+		</div>
+		
+	</script>
+	<script type="text/template" id="main_tmpl_carousel2">
+		<ul id="carouselPager">
+			<% for(var i=1;i<value.length-1;i++) {%>
+			<li class="pager-item" id="pager<%= value[i].attributes.picId %>">
+				<span class="pager-box" ><%= value[i].attributes.picId%></span>
+			</li>
+			<%}%>
+		</ul>
+	</script>
+</head>
+<body>
+<div id="Header">
+	<div id="header">
+		<a href="./flywin.html" id="fw_logo">
+			<img src="./source/title.png" alt="logo" />
+			<span> FlyWin</span>
+		</a>	
+		<div id="fw_navig">
+			登录 注册 客服 帮助      
+		</div>
+		<div id="fw_header">
+		
+		</div>
+		<div  id="fw_search" >
+			<form method="get" name="" action="./flywin.html">
+				<input type="submit" name="" class="submit" value="">
+				<input type="text" name="" class="text" placeholder="请输入文字"/>
+			</form>
+		</div>
+			
+	</div>
+</div>
+	
+	
+<div id="fw_main">
+	<div id="mainSon"></div>
+</div>
+<div id="fw_content">
+	<a href="./sale.html">
+		<div id="box1" class="boxs">
+			<div class="boxsSon"></div>
+		</div>
+	</a>
+	<a href="./vip.html">
+		<div id="box2" class="boxs">
+			<div class="boxsSon"></div>
+		</div>
+	</a>
+	<a href="./vive.html">
+		<div id="box3" class="boxs">
+			<div class="boxsSon"></div>
+		</div>
+	</a>
+	
+	<div class = "daughter"></div>  
+	
+</div>
+<div id="fw_mvContent">
+	<h2>超越极限 十分，完美</h2>
+	<div id="mvContent">
+		<div class="divMv"></div>
+		<div class="divMv"></div>
+		<div class="divMv"></div>
+		<div class="divMv"></div>
+		<div class="divMv"></div>
+		<div class="divMv"></div>
+	</div>
+	<div id="buyContent">
+		<a href="./vive.html">迎接 htc 10</a>
+		<a href="./sale.html">立即购买</a>
+	</div>
+	<div id="mask"></div>
+	<div id="mvPlayer"></div>
+</div>
+	<script data-main="./js/main" src="./js/commen/require.js"></script>
+	
+	<div id="fw_footer"></div>
+
+	<!-- <video width="320" height="240" controls="controls">
+		 <source src="./source/vivo.mp4" type="video/mp4" />
+		 
+	</video> -->
+</body>
+</html>
