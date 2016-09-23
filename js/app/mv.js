@@ -1,4 +1,4 @@
-define(["zscript/zscript.array","backbone"],function(z_array,backBone){
+define(["backbone"],function(backBone){
 	var mv=function(url){
 		this.init=function(){
 			$("#mask").css("opacity","0.5").css("pointer-events","auto");
