@@ -1,0 +1,32 @@
+[
+	{
+		"position":1,
+		"title":"shop"
+
+	},
+	{
+		"position":2,
+		"title":"product"
+
+	},
+	{
+		"position":3,
+		"title":"app"
+
+	},
+	{
+		"position":4,
+		"title":"bbs"
+
+	},
+	{
+		"position":5,
+		"title":"phone"
+
+	},
+	{
+		"position":6,
+		"title":"news"
+
+	}
+]
