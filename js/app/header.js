@@ -57,7 +57,7 @@ define(['backbone'],function(Backbone){
 								$('#header').removeClass('top');
 							}
 						});
-						Backbone.history.loadUrl();
+						//Backbone.history.loadUrl();
 					}
 				});
 
