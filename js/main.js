@@ -9,7 +9,7 @@ require.config({
 		mv:"mv"
 	}
 });
-require(['header','container','mv','backbone',"jquery","underscore"],function(Header,Container,Mv,Backbone,$,_){
+require(['header','container','mv',"jquery"],function(Header,Container,Mv,$){
 	var header=new Header();
 	var ccontainer=new Container.Container();
 	/**/
