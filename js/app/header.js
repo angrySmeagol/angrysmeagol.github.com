@@ -13,6 +13,12 @@ define(['backbone'],function(Backbone){
 		var MenuView=Backbone.View.extend({
 			el:$('#fw_header'),
 			template:_.template($("#header_tmpl").html()),
+			goTop:function(){
+				var sTop=document.documentElement.scrollTop+document.body.scrollTop;
+				if(sTop==0) return;
+				setTimeout(window.scrollBy(0,-80),100);
+				this.goTop();
+			},
 			render:function(){
 				//this.el.empty();
 				var html=this.template({value:this.model.toArray()});
@@ -42,6 +48,7 @@ define(['backbone'],function(Backbone){
 						_this._items=new ItemCollection(data);
 						_this._view=new MenuView({model:_this._items});
 						_this._view.render();
+						$("#goTop").bind("click",function(){_this._view.goTop();});
 						$(window).scroll(function(){
 							if($(window).scrollTop()>=50){
 								$('#header').addClass('top');
