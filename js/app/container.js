@@ -148,7 +148,7 @@ define(["backbone"],function(Backbone){
 			nextClick:function(e){
 				_self=this;
 				var current=this.model.findWhere({'current':true});
-				current=current.get("picId");
+				if(current) current=current.get("picId");
 				clearInterval(events.timer);
 				if(e.currentTarget.id=="picNext"){
 					this.changePic(current);
