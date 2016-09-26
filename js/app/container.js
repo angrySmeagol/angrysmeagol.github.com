@@ -192,10 +192,11 @@ define(["backbone"],function(Backbone){
 					},4000);
 			},
 			changePic:function(current){
-				this.model.models[current].set({current:false});
-				if(current+1) {
+				if(this.model.models[current+1]) {
 					this.model.models[current+1].set({current:true});
-				}
+				}else{return;}
+				this.model.models[current].set({current:false});
+				
 			},
 			render:function(){
 				//this.el.empty();
