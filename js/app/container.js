@@ -49,7 +49,9 @@ define(["backbone"],function(Backbone){
 						$("#carousel").css("left",end);
 
 						var current=_self.model.findWhere({'current':true});
-						if(current) current=current.get("picId");
+						if(current) {
+							current=current.get("picId");
+						}
 						$(".pager-item").removeClass("active");
 						if(current==0){
 							$("#carousel").css("left",$("#fw_carousel").width()*-7);
@@ -148,7 +150,9 @@ define(["backbone"],function(Backbone){
 			nextClick:function(e){
 				_self=this;
 				var current=this.model.findWhere({'current':true});
-				if(current) current=current.get("picId");
+				if(current) {
+					current=current.get("picId");
+				}
 				clearInterval(events.timer);
 				if(e.currentTarget.id=="picNext"){
 					this.changePic(current);
@@ -189,7 +193,9 @@ define(["backbone"],function(Backbone){
 			},
 			changePic:function(current){
 				this.model.models[current].set({current:false});
-				if(current+1) this.model.models[current+1].set({current:true});
+				if(current+1) {
+					this.model.models[current+1].set({current:true});
+				}
 			},
 			render:function(){
 				//this.el.empty();
