@@ -90,7 +90,18 @@ input,button,select,textarea{outline:none;}
 #fw_header ul a:hover{
 	color:#81BC37;
 }
-
+#fw_header #goTop{
+	display: none;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 52px;height: 52px;
+	background-image: url(../source/divFloat.png);
+	background-position: -52px 0;
+}
+#header.top #goTop{
+	display: block;
+}
 
 
 
