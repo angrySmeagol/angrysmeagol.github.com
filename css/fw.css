@@ -14,7 +14,7 @@ input[type="submit"]{
 	cursor: pointer;
 }
 input,button,select,textarea{outline:none;}
-span{cursor:default;}
+span,h1,h2,h3,h4{cursor:default;}
 
 
 @media  screen and (min-width: 200px) {
