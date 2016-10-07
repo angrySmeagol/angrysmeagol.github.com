@@ -4,7 +4,8 @@ require.config({
 		jquery:'../commen/3.1.0jquery',
 		underscore:'../commen/underscore',
 		backbone:'../commen/backbone'
-	}
+	}，
+	waitSeconds: 200
 });
 require(["jquery","backbone"],function($,Backbone){
 	var header=new Header();
