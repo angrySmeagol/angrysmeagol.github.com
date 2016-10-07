@@ -68,6 +68,12 @@ require(["jquery","backbone"],function($,Backbone){
 								$('#header').removeClass('top');
 							}
 						});
+						if($(window).scrollTop()>=50){
+							$('#header').addClass('top');
+						}
+						else{
+							$('#header').removeClass('top');
+						}
 						//Backbone.history.loadUrl();
 					}
 				});
