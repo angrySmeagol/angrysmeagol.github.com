@@ -1,7 +1,7 @@
 require.config({
 	baseUrl:'./js/app',
 	paths:{
-		jquery:'../commen/3.1.0jquery',
+		jquery:'../commen/3.1.1minJquery',
 		underscore:'../commen/underscore',
 		backbone:'../commen/backbone'
 	},
