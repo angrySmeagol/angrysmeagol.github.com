@@ -97,7 +97,7 @@ span,h1,h2,h4{cursor:default;}
 	display: none;
 	position: fixed;
 	right: 20px;
-	bottom: 20px;
+	bottom: 100px;
 	width: 52px;height: 52px;
 	background-image: url(http://i6.pdim.gs/1dde20a925c1a0cb05c29454fa47754d.png);
 	background-position: -52px 0;
