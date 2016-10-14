@@ -9,7 +9,8 @@ require.config({
 });
 require(["jquery","backbone"],function($,Backbone){
 	var header=new Header();
-	var ccontainer=new Container();
+	var container=new Container();
+	var footer=new Footer();
 	/*header*/
 	function Header(){
 		var Item=Backbone.Model.extend({
@@ -329,6 +330,203 @@ require(["jquery","backbone"],function($,Backbone){
 			}
 		});
 		var App=new NavigationRouter();
+	}
+	/**/
+	/**/
+	/*footer*/
+	function Footer(){
+		var Item=Backbone.Model.extend({
+			defaults:{
+			}
+		});
+		var ItemCollection=Backbone.Collection.extend({
+			model:Item
+		});
+		var Events=_.extend(Backbone.Events);
+		Events.country=Events.more=Events.share=false;
+		var ViewCountry=Backbone.View.extend({
+			el:$("#footer-block"),
+			template:_.template($("#footer_tmpl_countery").html()),
+			initialize:function(){
+				$(".click-area:first:first-child").bind("click",this.showCountry);
+				$("#footer-block .close").bind("click",this.showCountry);
+				Events.downCountry=this.showCountry;
+			},
+			showCountry:function(){
+				if(Events.more==true){
+					Events.downMore();
+				}
+				if(Events.share==true){
+						Events.downShare();
+				}
+				$("#footer-block").hasClass("active")?$("#footer-block").removeClass("active"):$("#footer-block").addClass("active");
+				if($("#footer-block").hasClass("active")){
+					Events.country=true;
+				}
+				else{
+					Events.country=false;
+				}	
+			
+				
+				
+			},
+			render:function(){
+				var vaue=this.model.toArray()[0].get("country");
+				/*var vaueCode=_.map(vaue,function(codeAt){
+					return codeAt.charCodeAt(0);
+				});*/
+				var lenth=[0,16,30,46];
+				var html=this.template({
+					value:vaue,
+					length:lenth
+				});
+				html="<div id='country-block'>"+html+"</div>";
+				$(html).appendTo(this.el);
+			}
+		});
+		var ViewMore=Backbone.View.extend({
+			el:$("#more-block"),
+			template:_.template($("#footer_tmpl_more").html()),
+			initialize:function(){
+				$(".arrow-block").bind("click",this.move);
+				Events.downMore=this.move;
+				
+
+			},
+			move:function(){
+				//closeOtherView();
+				$("#fw_footer").hasClass("move")?down():up();
+				
+				function down(){
+					
+					var height=parseInt($("#more-block").css("height").slice(0,$("#more-block").css("height").indexOf("px")));
+					var min_height=25;
+					var timer=setInterval(function(){
+						height-=25;
+						/*$("#fw_footer").css("bottom",bottom+"px");*/
+						$("#fw_footer").css("height",height+"px");
+						if(height<=min_height){
+							clearInterval(timer);
+							$("#fw_footer").removeClass("move");
+							$("#more-block").css("display","none");	
+							Events.more=false;
+						}
+					},9);
+					
+				};
+				function up(){
+					if(Events.country==true){
+						Events.downCountry();
+					}
+					if(Events.share==true){
+						Events.downShare();
+					}
+					$("#fw_footer").addClass("move");
+					$("#more-block").css("display","block");
+					var more_height=parseInt($("#more-block").css("height").slice(0,$("#more-block").css("height").indexOf("px")));
+					var height=25;
+					var timer=setInterval(function(){
+						height+=25;
+						/*$("#fw_footer").css("bottom",bottom+"px");*/
+						$("#fw_footer").css("height",height+"px");
+						if(height>more_height){
+							clearInterval(timer);
+							Events.more=true;
+						}
+					},9);
+				};
+			},
+			render:function(){
+				var vaue={
+					keys:this.model.toArray()[1].keys(),
+					values:this.model.toArray()[1].values()
+				};
+				var html=this.template({value:vaue});
+				html="<div id='more-block-link'>"+html+"<div>";
+				$(html).appendTo(this.el);
+			}
+		});
+		var ViewShare=Backbone.View.extend({
+			el:$("#share-block"),
+			initialize:function(){
+				$(".connect-block .click-area").bind("click",this.open);
+				$("#share-block .close").bind("click",this.open);
+				Events.downShare=this.open;
+			},
+			open:function(){
+				if(Events.more==true){
+					Events.downMore();
+				}
+				if(Events.country==true){
+					Events.downCountry();
+				}
+				$("#share-block").hasClass("active")?$("#share-block").removeClass("active"):$("#share-block").addClass("active");
+				if($("#share-block").hasClass("active")){
+					Events.share=true;
+				}
+				else{
+					Events.share=false;
+				}
+			},
+			render:function(){
+				var value=this.model.toArray()[2].get("website");
+				for (var i = value.length - 1; i >= 0; i--) {
+					var Div=$("<div id=\'"+_.keys(value[i])+"\'><img src=\'"+_.values(value[i])+"\'></img></div>");
+					$(Div).appendTo(this.el);
+				}
+			}
+		});
+		var NavigationRouter=Backbone.Router.extend({
+			_data:null,
+			_items:null,
+			_viewCountry:null,
+			_viewMore:null,
+			_viewShare:null,
+			initialize:function(){
+				var _this=this;
+				$.ajax({
+					url:'./js/footer.json',
+					dataType:'json',
+					data:{},
+					async:false,
+					success:function(data){
+						_this._data=data;
+						_this._items=new ItemCollection(data);
+						_this._viewCountry=new ViewCountry({model:_this._items});
+						_this._viewMore=new ViewMore({model:_this._items});
+						_this._viewShare=new ViewShare({model:_this._items});
+						_this._viewCountry.render();
+						_this._viewMore.render();
+						_this._viewShare.render();
+					}
+				});
+			}	
+		});
+		var App=new NavigationRouter();
+	};
+	/**/
+	/**/
+	/*Mv*/
+	function Mv(url){
+		this.init=function(){
+			$("#mask").css("opacity","0.5").css("pointer-events","auto");
+			$("#mvPlayer").css("opacity","1").css("pointer-events","auto");
+			var str=url.substring(0,url.lastIndexOf("."));
+			var mv='<video id="video" width="100%" height="100%" controls="controls" autoplay="autopaly"><source src="'
+			+str+'.mp4" type="video/mp4" /> <source src="'
+			+str+'.ogg" type="video/ogg" /> <source src="'
+			+str+'.webm" type="video/webm" />  <object data="'
+			+str+'.mp4" width="100%" height="100%"> <embed src="'
+			+str+'.swf" width="100%" height="100%" /></object></video>';
+			
+			$("#mvPlayer").append(mv);
+			$("#mask").bind("click",this.closeMv);
+		};
+		this.closeMv=function(){
+			$("#video").remove();
+			$("#mask").css("opacity","0").css("pointer-events","none");
+			$("#mvPlayer").css("opacity","0").css("pointer-events","none");
+		};
 	}
 	/*Mv*/
 	function Mv(url){
