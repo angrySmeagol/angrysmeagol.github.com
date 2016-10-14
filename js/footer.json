@@ -1,0 +1,37 @@
+[
+	{
+		"country":["Australia","Österreich","Bangladesh","België","Belgique","Brazil","Canada - English","Canada - Français","Česká republika",
+			"中国","Danmark","Deutschland","España","Suomi","France","Ελλάδα","Hong Kong","香港","Hrvatska","India","Indonesia",
+			"Ireland","Italia","日本","Казахстан","América Latina","Magyarország","Middle East","الشرق الأوسط","Myanmar",
+			"Nederland","New Zealand","Norge","Pakistan","Россия и СНГ","Polska","Portugal","România","Schweiz","Svizzera","Suisse","Србија","Slovensko",
+			"Singapore","Sri Lanka","Sverige","台灣","ประเทศไทย","Türkiye","Україна","United Kingdom","United States","Việt Nam"]
+	},
+	{
+		"product":[
+			"智慧型手機","HTC RE","平板","HTC 配件","購買地點"
+		],
+		"software":["HTC Sync Manager"],
+		"emploee":["加入 HTC"],
+		"beyoung":[
+			"創新突破","UltraPixel 相機","HTC 傳輸工具","Power to Give","HTC Connect"
+		],
+		"about":[
+			"企業社會責任","新聞稿","公司總覽","領導階層","投資人"
+		],
+		"serverce":[
+			"到府收送維修服務","客戶服務中心資訊","預約專人服務","HTC數位學園","客戶服務佈告欄","產品有限保固說明"
+		],
+		"website":[
+			"HTC Vive","HTC 官方粉絲團","HTC 官方 YouTube","HTC 論壇","HTC Blog","HTC Dev","HTC Pro","HTC Research","Get Started"
+		],
+		"shop":[],
+		"news":["活動登入"]
+	},
+	{
+		"website":[
+			{"bbs":"http://www.htc.com/managed-assets/shared/desktop/social/htc_community_icon.png"},
+			{"youtube":"http://www.htc.com/assets/1.0/ctx/layout/img/ltr/connect-youtube.png"},
+			{"facebook":"http://www.htc.com/assets/1.0/ctx/layout/img/ltr/connect-fb.png"}
+		]
+	}
+]
