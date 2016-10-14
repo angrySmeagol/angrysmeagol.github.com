@@ -18,6 +18,9 @@ span,h1,h2,h4{cursor:default;}
 
 
 @media  screen and (min-width: 200px) {
+#site{
+	position: relative;
+}
 /*  */
 /*  */
 /* header */
@@ -540,3 +543,381 @@ span,h1,h2,h4{cursor:default;}
 	background-color: #333;
 	color: #fff;
 }
+
+/*  */
+
+/* footer */
+#Footer{
+	width: 98%;
+	margin: 0 auto;
+	min-width: 1000px;
+	position: relative;
+}
+#fw_footer{
+	bottom: 0px;
+	width: 100%;
+	min-width: 1000px;
+	position: absolute;
+	z-index: 99998;
+}
+
+#fw_footer #footer{
+	height: 25px;
+	color: #666;
+	letter-spacing: .025em;
+	font-size: 13px;
+	cursor: default;
+	background-color: #DBDDD8;
+
+}
+
+#fw_footer #footer .region-block{
+	float: left;
+	width: 46%;
+	display: table;
+	height: 25px;
+}
+#fw_footer #footer .region-block .click-area{
+	display: inline-table;
+	float: left;
+	height: 25px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+#fw_footer #footer .region-block .click-area .region-text{
+	height: 18px;
+	line-height: 25px;
+	border: 0;
+	border-right: solid 1px;
+	padding-right: 14px;
+	padding-left: 25px;
+	vertical-align: middle;
+	margin: auto;
+	display: table-cell;
+}
+#fw_footer #footer .region-block .click-area .globle{
+	height: 18px;
+	width: 50px;
+	margin-left: 10px;
+	background-image: url("http://www.htc.com/assets/layout/img/ltr/globe_nbg.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	display: table-cell;
+	vertical-align: middle;
+}
+#fw_footer #footer .region-block .left-declaration-block{
+	float: left;
+	line-height: 25px;
+	color: #000;
+}
+#fw_footer #footer-block{
+	position: absolute;
+	top: auto;
+	bottom: 25px;
+	left: 25px;
+	right: 25px;
+	display: none;
+	background-color: #f6f6f6;
+
+}
+#fw_footer #footer-block.active{
+	display: block;
+}
+#fw_footer #footer-block .close{
+	position: absolute;
+	z-index: 99910100;
+	width: 20px;
+	height: 20px;
+	top: 5px;
+	right: 5px;
+	border: solid 1px transparent;
+	cursor: pointer;
+}
+#fw_footer #footer-block .close::after{
+	content: "";
+	display: block;
+	width: 1px;
+	height: 19px;
+	position: absolute;
+	right: 50%;
+	top: 0;
+	background-color: #666;
+	transform:rotate(45deg);
+
+}
+#fw_footer #footer-block .close::before{
+	content: "";
+	display: block;
+	width: 1px;
+	height: 19px;
+	position: absolute;
+	right: 50%;
+	top: 0;
+	background-color: #666;
+	transform:rotate(-45deg);
+}
+#fw_footer #footer-block h2{
+	font-size: 30px;
+	color: #a5cf4c;
+	text-align: center;
+	margin: 1.5%;
+}
+
+#fw_footer #footer-block #country-block{
+	
+	width: 97%;
+	height: 97%;
+	text-align: center;
+	margin: 30px auto;
+}
+#fw_footer #footer-block #country-block::before{
+	content:"";
+	width:0;
+	height: 0;
+	border-style: solid;
+	border-width: 12px 10px 0 10px;
+	border-color: #f6f6f6 transparent transparent transparent;
+	position: absolute;
+	z-index: 99910212;
+	bottom: -12px;
+	left: 23px;
+}
+#fw_footer #footer-block #country-block ul{
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	width: 24%;
+	list-style: none;
+}
+#fw_footer #footer-block #country-block ul li{
+	font-size: 14px;
+	color: #666;
+	text-decoration: none;
+	margin: 2px;
+	padding: 5px;
+}
+#fw_footer #footer .arrow-block{
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+}
+#fw_footer #footer .arrow-block .arrow-icon{
+	z-index: 99910189;
+	height: 25px;
+	margin: auto;
+	background-image: url("http://www.htc.com/assets/layout/img/footer-arrow-up-down.png");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	height: 22px;
+	width: 40px;
+	float: none;
+
+}
+#fw_footer #footer .connect-block{
+	float: right;
+	z-index: 9999;
+	width: 46%;
+	height: 25px;
+	position: relative;
+	display: table;
+}
+#fw_footer #footer .connect-block .right-declaration-block{
+	text-align: right;
+	padding: 0 3%;
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	padding-right: 10%;
+}
+
+#fw_footer #footer .connect-block .right-declaration-block a{
+	display: inline-block;
+	text-decoration: none;
+	color: #000;
+	font-size: 11px;
+	line-height: 15px;
+}
+#fw_footer #footer .connect-block .right-declaration-block a:first-child::after{
+	content: '';
+	border-right: 1px solid;
+	padding-left: 10px;
+	margin-right: 10px;
+}
+#fw_footer #footer .connect-block .click-area{
+	height: 25px;
+	vertical-align: middle;
+	display: inline-table;
+	max-width: 225px;
+	float: right;
+	cursor: pointer;
+}
+#fw_footer #footer .connect-block .click-area .dot-grey{
+	background: #666;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+	transform: translate(0,50%);
+}
+#fw_footer #footer .connect-block .click-area .dot-grey::before{
+	content: '';
+	background: #666;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	position: absolute;
+	left: 15px;
+	margin: 0 auto;
+}
+#fw_footer #footer .connect-block .click-area .dot-grey::after{
+	content: '';
+	background: #666;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	position: absolute;
+	right: 15px;
+}
+#fw_footer #footer .connect-block .click-area .default-area{
+	display: table-cell;
+	vertical-align: middle;
+	padding-right: 25px;
+	padding-left: 25px;
+	white-space: nowrap;
+	text-align: right;
+	width: 30px;
+}
+
+#fw_footer.move{
+	height: 25px;
+	overflow: hidden;
+}
+#fw_footer #more-block{
+	width: 100%;
+	display: none;
+	background-color: #333;;
+}
+
+#fw_footer #more-block #more-block-right{
+	width: 20%;
+	float: right;
+}
+#fw_footer #more-block #more-block-right h2{
+	margin: 25px;
+	color: #fff;
+}
+#fw_footer #more-block #more-block-right p{
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 20px;
+	margin: 25px;
+}
+#fw_footer #more-block #more-block-right div:last-child{
+	margin: 25px;
+}
+#fw_footer #more-block #more-block-right a,a:hover,a:visited,a:link{
+	text-orientation: none;
+	color: #fff;
+	font-size: 12px;
+	line-height: 20px;
+	display: block;
+}
+
+#fw_footer #more-block #more-block-link{
+	width: 80%;
+}
+#fw_footer #more-block #more-block-link .link4{
+	display:inline-block;
+	vertical-align: top;
+	width: 24%;
+}
+#fw_footer #more-block #more-block-link .link-title{
+	padding: 20px 15px;
+	list-style: none;
+}
+#fw_footer #more-block #more-block-link .link-title div{
+	color: #fff;
+	font-size: 20px;
+	margin: 20px 0 6px 0;
+	text-decoration: none;
+	font-weight: 800;
+}
+#fw_footer #more-block #more-block-link .link-value{
+	color: #fff;
+	font-size: 12px;
+	text-decoration: none;
+	margin-bottom: 6px;
+}
+
+
+
+#fw_footer #share-block{
+	position: absolute;
+	top: auto;
+	bottom: 25px;
+	left: auto;
+	right: 25px;
+	display: none;
+	background-color: #f6f6f6;
+	padding: 10px;
+	
+}
+#fw_footer #share-block::after{
+	content: "";
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 12px 10px 0 10px;
+	border-color: #f6f6f6 transparent transparent transparent;
+	position: absolute;
+	z-index: 99910212;
+	bottom: -12px;
+	right: 23px;
+}
+#fw_footer #share-block div{
+	display: inline-block;
+	padding: 10px 10px 0 0;
+}
+#fw_footer #share-block.active{
+	display: block;
+}
+#fw_footer #share-block .close{
+	position: absolute;
+	z-index: 99910100;
+	width: 20px;
+	height: 20px;
+	top: 0;
+	right: 0;
+	border: solid 1px transparent;
+	cursor: pointer;
+}
+#fw_footer #share-block .close::after{
+	content: "";
+	display: block;
+	width: 1px;
+	height: 19px;
+	position: absolute;
+	right: 50%;
+	top: 0;
+	background-color: #666;
+	transform:rotate(45deg);
+
+}
+#fw_footer #share-block .close::before{
+	content: "";
+	display: block;
+	width: 1px;
+	height: 19px;
+	position: absolute;
+	right: 50%;
+	top: 0;
+	background-color: #666;
+	transform:rotate(-45deg);
+}
+
+
