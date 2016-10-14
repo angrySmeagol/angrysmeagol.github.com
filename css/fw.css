@@ -413,9 +413,10 @@ span,h1,h2,h4{cursor:default;}
 	background-color: #000000;
 	transition: 0.5;
 }
+
 #Products{
 	width: 98%;
-	margin:10px auto;
+	margin:10px auto 0 auto;
 	min-width: 1000px;
 }
 #fw_products{
@@ -423,9 +424,8 @@ span,h1,h2,h4{cursor:default;}
 	
 	background-color: #BBC5AC;
 	
-	padding: 50px 0;
+	padding: 50px 0 150px 0;
 	text-align: center;
-	float: left;
 }
 #fw_products h2{
 	text-align: center;
