@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UEFA champions league's draw for the 16s</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		window.onload=function(){
+			var groupA=[],groupB=[];
+			var timer;
+			document.getElementById("click").onclick=function(){
+				groupA=[];
+				groupB=[];
+				if(timer) clearInterval(timer);
+				click();
+			}
+
+
+
+			function click(){
+				while(groupB[7]==undefined){	
+					groupA=[];
+					groupB=[];
+					init();
+				}
+
+				var domsOne=document.getElementsByClassName("teamOne");
+				var domsTwo=document.getElementsByClassName("teamTwo");
+				Array.prototype.map.call(domsOne,function(x){
+					x.lastChild.innerHTML="";
+				});
+				Array.prototype.map.call(domsTwo,function(x){
+					x.lastChild.innerHTML="";
+				});
+				print._NO=0;
+				print(groupA,groupB);	
+			}
+			function init(){
+				for(var i=0;i<8;i++){
+					var box1=boxOne(groupA);
+					var x=draw(box1);
+					groupA.push(x);
+					
+					var box2=boxTow(groupB,groupA);
+					var x=draw(box2);
+					groupB.push(x);
+				}
+			}
+			function print(A,B){
+				if(A.length>0&&B.length>0){
+					var a=A.shift();
+					var b=B.shift();
+					a=a.NO;
+					b=b.NO;
+					switch(a){
+						case 0: a="阿森纳";break;
+						case 1: a="那不勒斯";break;
+						case 2: a="巴塞罗那";break;
+						case 3: a="马德里竞技";break;
+						case 4: a="摩纳哥";break;
+						case 5: a="多特蒙德";break;
+						case 6: a="莱斯特城";break;
+						case 7: a="尤文图斯";break;
+						default:console.log("teamError");
+					}
+					switch(b){
+						case 0: b="巴黎圣日耳曼";break;
+						case 1: b="本菲卡";break;
+						case 2: b="曼城";break;
+						case 3: b="拜仁慕尼黑";break;
+						case 4: b="勒沃库森";break;
+						case 5: b="皇家马德里";break;
+						case 6: b="波尔图";break;
+						case 7: b="塞维利亚";break;
+						default:console.log("teamError");
+					}
+					var domsOne=document.getElementsByClassName("teamOne");
+					var domsTwo=document.getElementsByClassName("teamTwo");
+					domsOne[print._NO].lastChild.innerHTML=a;
+					domsTwo[print._NO].lastChild.innerHTML=b;
+					print._NO++;
+					timer=setTimeout(function(){print(A,B)},1000);
+				}
+			}
+			function boxOne(arr){
+				var Team=team();
+				var box=Team.A;
+				box=box.filter(function(x,i){
+					var s=arr.map(function(x){
+						return x.NO;
+					}).join("");
+					if (s.indexOf(x.NO.toString())==-1) return true;
+					return false;
+				});
+				return box;
+			}
+			function boxTow(arrB,arrA){
+				var  Team=team();
+				var box=Team.B;
+				box=box.filter(function(x,i){
+					var s=arrB.map(function(x){
+						return x.NO;
+					}).join("");
+					if (s.indexOf(x.NO.toString())==-1) return true;
+					return false;
+				});
+				//same group
+				var last=arrA[arrA.length-1];
+				box=box.filter(function(x,i){
+					return x.NO!=last.NO;
+				});
+				//same country
+				box=box.filter(function(x,i){
+					return x.country!=last.country;
+				});
+				return box;
+			}
+			function draw(arr){
+				return arr[Math.floor(Math.random()*arr.length)];
+			}
+			//dataConstruntor
+			function team(){
+				var arrA=[],arrB=[];
+				for(var i=0;i<8;i++){
+					var temp=function(i){
+						this.group="A";
+						this.NO=i;
+						switch(this.NO){
+							case 0:
+							case 6:
+							this.country="England";break;
+							case 1:
+							case 7:
+							this.country="Italy";break;
+							case 2:
+							case 3:
+							this.country="Spain";break;
+							case 4:
+							this.country="France";break;
+							case 5:
+							this.country="De";break;
+							default:console.log("country Error");
+						}
+					}
+					arrA.push(new temp(i));
+				}
+				for(var i=0;i<8;i++){
+					var temp=function(i){
+						this.group="B";
+						this.NO=i;
+						switch(this.NO){
+							case 0:
+							this.country="France";break;
+							case 5:
+							case 7:
+							this.country="Spain";break;
+							case 2:
+							this.country="England";break;
+							case 3:
+							case 4:
+							this.country="De";break;
+							case 1:
+							case 6:
+							this.country="Portugal";break;
+							default:console.log("country Error");
+						}
+					}
+
+					arrB.push(new temp(i));
+				}
+				return {A:arrA,B:arrB};
+			}//end dataConstructor
+			
+		}
+	</script>
+</head>
+<body>
+	<h2 style="text-align:center">2016欧冠16强抽签</h2>
+	<div id="base" style="width:50%;margin:20px auto;border: 1px solid black;">
+		<div id="rule">
+			<b>规则1：</b><span>同小组球队不对阵</span><br>
+			<b>规则2：</b><span>同国球队不对阵</span><br>
+			<b>规则3：</b><span>小组第一对阵第二</span><br>
+		</div>
+		<div id="teams" style="margin:10px 0 0 0; font-size: 12px; ">
+			<div class="team8">
+				<p>小组第一：阿森纳、那不勒斯、巴塞罗那、马德里竞技、摩纳哥、多特蒙德、莱斯特城、尤文图斯</p>
+			</div>
+			<div class="team8">
+				<p>小组第二：巴黎圣日耳曼、本菲卡、曼城、拜仁慕尼黑、勒沃库森、皇家马德里、波尔图、塞维利亚</p>
+			</div>
+		</div>
+	</div>
+	<div id="command" style="width:50%;margin:20px auto;">
+		<!-- <span>抽</span><input type="text" name="number" pattern="[0-9]{1,4}" value="1" title="1到9999之间" style="width:30px;" /><span>次<sub>(最多9999次)</sub></span> -->
+		<input id="click" type="button" name="submit" value="抽签">
+	</div>
+	<style type="text/css">
+		.teamOne,.teamTwo{
+			display: inline;
+			float: left;
+			width: 10%;
+			border: 1px solid #EF8F8F;
+			height: 60px;
+		}
+		.teamA{
+
+			height: 80px;
+		}
+	</style>
+	<div id="result" style="width:50%;margin:20px auto;border: 1px solid black;  font-size: 12px;">
+		<div class="teamA">
+			<div class="teamOne">A:<div></div></div>
+			<div class="teamOne">B:<div></div></div>
+			<div class="teamOne">C:<div></div></div>
+			<div class="teamOne">D:<div></div></div>
+			<div class="teamOne">E:<div></div></div>
+			<div class="teamOne">F:<div></div></div>
+			<div class="teamOne">G:<div></div></div>
+			<div class="teamOne">H:<div></div></div>	
+		</div>
+		<div class="teamA">
+			<div class="teamTwo">A:<div></div></div>
+			<div class="teamTwo">B:<div></div></div>
+			<div class="teamTwo">C:<div></div></div>
+			<div class="teamTwo">D:<div></div></div>
+			<div class="teamTwo">E:<div></div></div>
+			<div class="teamTwo">F:<div></div></div>
+			<div class="teamTwo">G:<div></div></div>
+			<div class="teamTwo">H:<div></div></div>	
+			
+		</div>
+
+	</div>
+	<p style="text-align:center;">copyright:法号郁闷@ <a href="http://tieba.baidu.com/%E6%8B%9C%E4%BB%81">拜仁吧</a></p>
+</body>
+</html>
