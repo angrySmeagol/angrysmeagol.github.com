@@ -7,7 +7,7 @@ require.config({
 	},
 	waitSeconds:0
 });
-require(["jquery","backbone"],function($,Backbone){
+require(["jquery","underscore","backbone"],function($,_,Backbone){
 	var header=new Header();
 	var container=new Container();
 	var footer=new Footer();
