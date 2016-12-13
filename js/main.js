@@ -7,7 +7,7 @@ require.config({
 	},
 	waitSeconds:0
 });
-require(["domReady!","jquery","backbone"],function(doc,$,Backbone){
+require(["jquery","backbone"],function($,Backbone){
 	var header=new Header();
 	var container=new Container();
 	var footer=new Footer();
