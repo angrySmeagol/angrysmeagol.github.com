@@ -5,9 +5,9 @@ require.config({
 		underscore:'../commen/underscore',
 		backbone:'../commen/backbone'
 	},
-	waitSeconds:200
+	waitSeconds:0
 });
-require(["jquery","backbone"],function($,Backbone){
+require(["domReady!","jquery","backbone"],function(doc,$,Backbone){
 	var header=new Header();
 	var container=new Container();
 	var footer=new Footer();
