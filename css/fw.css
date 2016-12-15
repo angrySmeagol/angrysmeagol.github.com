@@ -71,6 +71,13 @@ span,h1,h2,h4{cursor:default;}
 	float: right;
 	color: #81BC37;
 }
+#fw_navig a{
+	color: #81BC37;
+	display: inline-block;
+	font-size: 20px;
+	line-height: 20px;
+	text-decoration: none;
+}
 #fw_header{
 	height: 100px;
 
