@@ -32,6 +32,21 @@ require(["jquery","underscore","backbone"],function($,_,Backbone){
 				setTimeout(window.scrollBy(0,-80),100);
 				this.goTop();
 			},
+			register:function(e){
+				var link=e.target||e.srcElement;
+				var url=link.href;
+
+				e.preventDefault();
+				var reg=new XMLHttpRequest();
+				//reg.widthCredenttails=true;
+				reg.open("post",url);
+				reg.onreadystatechange=function(){
+					if(reg.readyState ===4&&reg.status==200){
+						console.log("success");
+					}
+				}
+				reg.send(null);
+			},
 			render:function(){
 				//this.el.empty();
 				var html=this.template({value:this.model.toArray()});
@@ -62,6 +77,7 @@ require(["jquery","underscore","backbone"],function($,_,Backbone){
 						_this._view=new MenuView({model:_this._items});
 						_this._view.render();
 						$("#goTop").bind("click",function(){_this._view.goTop();});
+						$("#register").bind("click",function(e){_this._view.register(e);});
 						$(window).scroll(function(){
 							if($(window).scrollTop()>=50){
 								$('#header').addClass('top');
