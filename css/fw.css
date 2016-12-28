@@ -113,7 +113,28 @@ span,h1,h2,h4{cursor:default;}
 	display: block;
 }
 
+#fw_header #leftSidebar{
+	display:block;
+	position:fixed;
+	left:20px;
+	top:40%;
+	width:52px;
+	height:104px;
+} 
+#fw_header #leftSidebar #cont{
+	width:52px;
+	height:52px;
+	font-size:18px;
+	line-height:18px;
+	overFlow:hidden;
+}
+#fw_header #leftSidebar #pic{
 
+	width:52px;
+	height:52px;
+	background-image:url(http://i6.pdim.gs/1dde20a925c1a0cb05c29454fa47754d.png);
+	background-position:-208px 0;
+}
 
 #fw_search{
 	width: 200px;
