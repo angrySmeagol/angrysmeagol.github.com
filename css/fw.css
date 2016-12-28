@@ -123,6 +123,7 @@ span,h1,h2,h4{cursor:default;}
 	border:1px solid #41f194;
 } 
 #fw_header #leftSidebar #cont{
+	padding-top:10px;
 	width:52px;
 	height:52px;
 	text-align:center;
