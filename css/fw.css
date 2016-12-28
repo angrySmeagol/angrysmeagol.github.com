@@ -80,7 +80,7 @@ span,h1,h2,h4{cursor:default;}
 }
 #fw_header{
 	height: 100px;
-
+	z-index:9999;
 }
 #fw_header a{
 	text-decoration: none;
@@ -124,6 +124,7 @@ span,h1,h2,h4{cursor:default;}
 #fw_header #leftSidebar #cont{
 	width:52px;
 	height:52px;
+	border:1px solid #41f194;
 	font-size:18px;
 	line-height:18px;
 	overFlow:hidden;
